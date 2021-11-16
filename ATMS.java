@@ -5,6 +5,7 @@
 package ATM_system;
 
 import javax.swing.JOptionPane;
+import java.util.*;
 
 /**
  *
@@ -32,19 +33,19 @@ public class ATMS extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jButtonCancel = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        jButtonEmptyButton2 = new javax.swing.JButton();
+        jButton0 = new javax.swing.JButton();
+        jButtonEmptyButton1 = new javax.swing.JButton();
+        jButtonClear = new javax.swing.JButton();
+        jButtonEmptyButton3 = new javax.swing.JButton();
+        jButtonEnter = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLblDisplay = new javax.swing.JLabel();
         jLabelPin = new javax.swing.JLabel();
@@ -55,6 +56,7 @@ public class ATMS extends javax.swing.JFrame {
         jLabelFastCash = new javax.swing.JLabel();
         jLabelMiniStatement = new javax.swing.JLabel();
         jTextField = new javax.swing.JTextField();
+        jLabelTextAboveTexField = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jBtnBalance = new javax.swing.JButton();
         jBtnBalanceReciept = new javax.swing.JButton();
@@ -97,82 +99,82 @@ public class ATMS extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setBackground(java.awt.Color.red);
-        jButton4.setText("Cancel");
+        jButtonCancel.setBackground(java.awt.Color.red);
+        jButtonCancel.setText("Cancel");
+        jButtonCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("4");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
 
-        jButton5.setText("4");
+        jButton5.setText("5");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
 
-        jButton6.setText("5");
+        jButton6.setText("6");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
 
-        jButton7.setText("6");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        jButtonEmptyButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                jButtonEmptyButton2ActionPerformed(evt);
             }
         });
 
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        jButton0.setText("0");
+        jButton0.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                jButton0ActionPerformed(evt);
             }
         });
 
-        jButton9.setText("0");
+        jButtonClear.setBackground(java.awt.Color.orange);
+        jButtonClear.setText("Clear");
+        jButtonClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonClearActionPerformed(evt);
+            }
+        });
+
+        jButtonEnter.setBackground(java.awt.Color.green);
+        jButtonEnter.setLabel("Enter");
+        jButtonEnter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEnterActionPerformed(evt);
+            }
+        });
+
+        jButton9.setText("9");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
             }
         });
 
-        jButton11.setBackground(java.awt.Color.orange);
-        jButton11.setText("Clear");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        jButton8.setText("8");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                jButton8ActionPerformed(evt);
             }
         });
 
-        jButton13.setBackground(java.awt.Color.green);
-        jButton13.setLabel("Enter");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        jButton7.setText("7");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
-            }
-        });
-
-        jButton14.setText("9");
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
-            }
-        });
-
-        jButton15.setText("8");
-        jButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton15ActionPerformed(evt);
-            }
-        });
-
-        jButton16.setText("7");
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
+                jButton7ActionPerformed(evt);
             }
         });
 
@@ -188,35 +190,35 @@ public class ATMS extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButtonEmptyButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton0, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButtonClear, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonEmptyButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButtonEmptyButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButtonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButtonEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -227,25 +229,25 @@ public class ATMS extends javax.swing.JFrame {
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonClear, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonEnter, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonEmptyButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton0, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonEmptyButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonEmptyButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -273,6 +275,14 @@ public class ATMS extends javax.swing.JFrame {
         jLabelMiniStatement.setText("Mini Statement");
 
         jTextField.setEditable(false);
+        jTextField.setMaximumSize(null);
+        jTextField.setMinimumSize(null);
+        jTextField.setPreferredSize(null);
+
+        jLabelTextAboveTexField.setText("Enter amount to withdraw");
+        jLabelTextAboveTexField.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        jLabelTextAboveTexField.setMaximumSize(null);
+        jLabelTextAboveTexField.setMinimumSize(null);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -291,34 +301,36 @@ public class ATMS extends javax.swing.JFrame {
                         .addComponent(jLabelMiniStatement))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabelCash, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
+                        .addGap(39, 39, 39)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabelPin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(11, 11, 11)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelTextAboveTexField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelFastCash))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLblDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGap(44, 44, 44)
-                                        .addComponent(jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                                .addComponent(jLabelFastCash)))))
+                                    .addComponent(jLabelPin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLblDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 104, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+            .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabelBalance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabelChangePin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(7, 7, 7)
                 .addComponent(jLabelPin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 12, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelFastCash, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelCash, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -330,8 +342,10 @@ public class ATMS extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLblDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelTextAboveTexField, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
@@ -351,6 +365,11 @@ public class ATMS extends javax.swing.JFrame {
         jBtnBalanceReciept.setLabel("->");
 
         jBtnCash.setLabel("->");
+        jBtnCash.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCashActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -406,7 +425,7 @@ public class ATMS extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jBtnChangePin, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(jBtnFastCash, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jBtnMiniStatement, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -440,7 +459,7 @@ public class ATMS extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(166, 166, 166)
+                .addGap(157, 157, 157)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -450,62 +469,147 @@ public class ATMS extends javax.swing.JFrame {
                             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    enum STATE {
+        BALANCE, CASH, BALANCE_RECEIPT, CHANGE_PIN, FAST_CASH, MINI_STATEMENT,
+        LOGGED_IN_MAIN_MENU, LOGGED_OUT;
+    }
+
+    private STATE applicationState = STATE.LOGGED_OUT;
+
+    private int balance = 200000;
+
+    private void showMainMenu() {
+        jLabelBalance.setVisible(true);
+        jLabelCash.setVisible(true);
+        jLabelBalanceReciept.setVisible(true);
+        jLabelChangePin.setVisible(true);
+        jLabelMiniStatement.setVisible(true);
+        jLabelFastCash.setVisible(true);
+        jLabelTextAboveTexField.setVisible(false);
+        jTextField.setVisible(false);
+        applicationState = STATE.LOGGED_IN_MAIN_MENU;
+    }
+
+    private void hideMainMenu() {
+        jLabelBalance.setVisible(false);
+        jLabelCash.setVisible(false);
+        jLabelBalanceReciept.setVisible(false);
+        jLabelChangePin.setVisible(false);
+        jLabelMiniStatement.setVisible(false);
+        jLabelFastCash.setVisible(false);
+    }
+
+    private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton0ActionPerformed
         // TODO add your handling code here:
-         jLblDisplay.setText(jLblDisplay.getText() + "3");
-    }//GEN-LAST:event_jButton3ActionPerformed
+        if (applicationState == STATE.LOGGED_OUT)
+            jLblDisplay.setText(jLblDisplay.getText() + "0");
+        else if (applicationState == STATE.CASH)
+            jTextField.setText(jTextField.getText() + "0");
+
+    }//GEN-LAST:event_jButton0ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if (applicationState == STATE.LOGGED_OUT)
+            jLblDisplay.setText(jLblDisplay.getText() + "1");
+        else if (applicationState == STATE.CASH)
+            jTextField.setText(jTextField.getText() + "1");
+
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-         jLblDisplay.setText(jLblDisplay.getText() + "2");
+        if (applicationState == STATE.LOGGED_OUT)
+            jLblDisplay.setText(jLblDisplay.getText() + "2");
+        else if (applicationState == STATE.CASH)
+            jTextField.setText(jTextField.getText() + "2");
+
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        if (applicationState == STATE.LOGGED_OUT)
+            jLblDisplay.setText(jLblDisplay.getText() + "3");
+        else if (applicationState == STATE.CASH)
+            jTextField.setText(jTextField.getText() + "3");
+
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        if (applicationState == STATE.LOGGED_OUT)
+            jLblDisplay.setText(jLblDisplay.getText() + "4");
+        else if (applicationState == STATE.CASH)
+            jTextField.setText(jTextField.getText() + "4");
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        if (applicationState == STATE.LOGGED_OUT)
+            jLblDisplay.setText(jLblDisplay.getText() + "5");
+        else if (applicationState == STATE.CASH)
+            jTextField.setText(jTextField.getText() + "5");
+
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-         jLblDisplay.setText(jLblDisplay.getText() + "5");
+        if (applicationState == STATE.LOGGED_OUT)
+            jLblDisplay.setText(jLblDisplay.getText() + "6");
+        else if (applicationState == STATE.CASH)
+            jTextField.setText(jTextField.getText() + "6");
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-         jLblDisplay.setText(jLblDisplay.getText() + "6");
+        if (applicationState == STATE.LOGGED_OUT)
+            jLblDisplay.setText(jLblDisplay.getText() + "7");
+        else if (applicationState == STATE.CASH)
+            jTextField.setText(jTextField.getText() + "7");
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
+        if (applicationState == STATE.LOGGED_OUT)
+            jLblDisplay.setText(jLblDisplay.getText() + "8");
+        else if (applicationState == STATE.CASH)
+            jTextField.setText(jTextField.getText() + "8");
+
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-         jLblDisplay.setText(jLblDisplay.getText() + "0");
+        if (applicationState == STATE.LOGGED_OUT)
+            jLblDisplay.setText(jLblDisplay.getText() + "9");
+        else if (applicationState == STATE.CASH)
+            jTextField.setText(jTextField.getText() + "9");
+
     }//GEN-LAST:event_jButton9ActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+    private void jButtonEmptyButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEmptyButton2ActionPerformed
         // TODO add your handling code here:
-         jLblDisplay.setText(jLblDisplay.getText() + "9");
-    }//GEN-LAST:event_jButton14ActionPerformed
+    }//GEN-LAST:event_jButtonEmptyButton2ActionPerformed
 
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+    private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
         // TODO add your handling code here:
-         jLblDisplay.setText(jLblDisplay.getText() + "8");
-    }//GEN-LAST:event_jButton15ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    System.exit(0);
-        
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        jLblDisplay.setText(jLblDisplay.getText() + "1");
-    }//GEN-LAST:event_jButton1ActionPerformed
+        if (applicationState == STATE.BALANCE) {
+            showMainMenu();
+        } else if (applicationState == STATE.LOGGED_IN_MAIN_MENU) {
+            System.exit(0);
+        } else if (applicationState == STATE.CASH) {
+            showMainMenu();
+        }
+    }//GEN-LAST:event_jButtonCancelActionPerformed
 
     private void jBtnBalanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnBalanceMouseClicked
         // TODO add your handling code here:
@@ -519,6 +623,7 @@ public class ATMS extends javax.swing.JFrame {
         jLabelMiniStatement.setVisible(false);
         jLabelFastCash.setVisible(false);
         jTextField.setVisible(false);
+        jLabelTextAboveTexField.setVisible(false);
 
         jBtnBalance.setEnabled(false);
         jBtnCash.setEnabled(false);
@@ -527,64 +632,85 @@ public class ATMS extends javax.swing.JFrame {
         jBtnMiniStatement.setEnabled(false);
         jBtnFastCash.setEnabled(false);
 
-        
+
     }//GEN-LAST:event_formWindowActivated
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-         jLblDisplay.setText(jLblDisplay.getText() + "4");
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void jButtonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClearActionPerformed
+        if (applicationState == STATE.LOGGED_OUT)
+            jLblDisplay.setText("");
+        else if (applicationState == STATE.CASH)
+            jTextField.setText("");
+    }//GEN-LAST:event_jButtonClearActionPerformed
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
-         jLblDisplay.setText(jLblDisplay.getText() + "7");
-    }//GEN-LAST:event_jButton16ActionPerformed
-
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-
-         jLblDisplay.setText("");
-    }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-
-        int PIN = 1234;
-        if(PIN == Integer.parseInt(jLblDisplay.getText())){
-            jTextField.setVisible(false);
-            jLabelBalance.setVisible(true);
-            jLabelCash.setVisible(true);
-            jLabelBalanceReciept.setVisible(true);
-            jLabelChangePin.setVisible(true);
-            jLabelMiniStatement.setVisible(true);
-            jLabelFastCash.setVisible(true);
-            jLabelPin.setVisible(false);
-            jLblDisplay.setVisible(false);
-            jBtnBalance.setEnabled(true);
-            jBtnCash.setEnabled(true);
-            jBtnBalanceReciept.setEnabled(true);
-            jBtnChangePin.setEnabled(true);
-            jBtnMiniStatement.setEnabled(true);
-            jBtnFastCash.setEnabled(true);
-        }else{
-            jLabelPin.setText("Please enter a valid pin");
+    private void jButtonEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnterActionPerformed
+        if (applicationState == STATE.LOGGED_OUT) {
+            int PIN = 1234;
+            if (PIN == Integer.parseInt(jLblDisplay.getText())) {
+                applicationState = STATE.LOGGED_IN_MAIN_MENU;
+                jTextField.setVisible(false);
+                jLabelBalance.setVisible(true);
+                jLabelCash.setVisible(true);
+                jLabelBalanceReciept.setVisible(true);
+                jLabelChangePin.setVisible(true);
+                jLabelMiniStatement.setVisible(true);
+                jLabelFastCash.setVisible(true);
+                jLabelPin.setVisible(false);
+                jLblDisplay.setVisible(false);
+                jBtnBalance.setEnabled(true);
+                jBtnCash.setEnabled(true);
+                jBtnBalanceReciept.setEnabled(true);
+                jBtnChangePin.setEnabled(true);
+                jBtnMiniStatement.setEnabled(true);
+                jBtnFastCash.setEnabled(true);
+            } else {
+                jLabelPin.setText("Please enter a valid pin");
+            }
+        } if (applicationState == STATE.CASH) {
+            int withdrawnMoney;
+            try {
+                withdrawnMoney  = Integer.parseInt(jTextField.getText());
+                if (withdrawnMoney > balance || withdrawnMoney == 0) {
+                    jTextField.setText("Invalid");
+                    return;
+                } else {
+                    balance -= withdrawnMoney;
+                    showMainMenu();
+                }
+            } catch (Exception e) {
+                jTextField.setText("Invalid");
+            }
         }
-        
-    }//GEN-LAST:event_jButton13ActionPerformed
+
+    }//GEN-LAST:event_jButtonEnterActionPerformed
 
     private void jBtnFastCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnFastCashActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnFastCashActionPerformed
 
     private void jBtnBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBalanceActionPerformed
-       // String balance = 10000;
-           jTextField.setText("10000");
+        // String balance = 10000;
+        if (applicationState == STATE.LOGGED_IN_MAIN_MENU) {
+            applicationState = STATE.BALANCE;
+            jTextField.setText(String.valueOf(balance));
             jTextField.setVisible(true);
-            jLabelCash.setVisible(false);
-            jLabelBalanceReciept.setVisible(false);
-            jLabelChangePin.setVisible(false);
-            jLabelMiniStatement.setVisible(false);
-            jLabelFastCash.setVisible(false);
-            
+            jLabelTextAboveTexField.setText("<html>"+"Balance"+"</html>");
+            jLabelTextAboveTexField.setVisible(true);
+            hideMainMenu();
+        }
+
     }//GEN-LAST:event_jBtnBalanceActionPerformed
+
+    private void jBtnCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCashActionPerformed
+        // TODO add your handling code here:
+        if (applicationState == STATE.LOGGED_IN_MAIN_MENU) {
+            applicationState = STATE.CASH;
+            jTextField.setText("");
+            jTextField.setVisible(true);
+            jLabelTextAboveTexField.setText("<html>"+"Enter amount to withdraw"+"</html>");
+            jLabelTextAboveTexField.setVisible(true);
+            hideMainMenu();
+        }
+    }//GEN-LAST:event_jBtnCashActionPerformed
 
     /**
      * @param args the command line arguments
@@ -628,14 +754,8 @@ public class ATMS extends javax.swing.JFrame {
     private javax.swing.JButton jBtnChangePin;
     private javax.swing.JButton jBtnFastCash;
     private javax.swing.JButton jBtnMiniStatement;
+    private javax.swing.JButton jButton0;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -644,6 +764,12 @@ public class ATMS extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JButton jButtonCancel;
+    private javax.swing.JButton jButtonClear;
+    private javax.swing.JButton jButtonEmptyButton1;
+    private javax.swing.JButton jButtonEmptyButton2;
+    private javax.swing.JButton jButtonEmptyButton3;
+    private javax.swing.JButton jButtonEnter;
     private javax.swing.JLabel jLabelBalance;
     private javax.swing.JLabel jLabelBalanceReciept;
     private javax.swing.JLabel jLabelCash;
@@ -651,6 +777,7 @@ public class ATMS extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelFastCash;
     private javax.swing.JLabel jLabelMiniStatement;
     private javax.swing.JLabel jLabelPin;
+    private javax.swing.JLabel jLabelTextAboveTexField;
     private javax.swing.JLabel jLblDisplay;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
