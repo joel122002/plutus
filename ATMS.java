@@ -28,6 +28,7 @@ public class ATMS extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -47,20 +48,30 @@ public class ATMS extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jLblDisplay = new javax.swing.JLabel();
+        jPanelNewPinScreen = new javax.swing.JPanel();
+        jLabelNewPin = new javax.swing.JLabel();
+        jLabelNewPinValue = new javax.swing.JLabel();
+        jPanelLoginScreen = new javax.swing.JPanel();
         jLabelPin = new javax.swing.JLabel();
+        jLabelPinValue = new javax.swing.JLabel();
+        jPanelMainMenuScreen = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jLabelBalance = new javax.swing.JLabel();
-        jLabelChangePin = new javax.swing.JLabel();
         jLabelCash = new javax.swing.JLabel();
         jLabelBalanceReciept = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabelChangePin = new javax.swing.JLabel();
         jLabelFastCash = new javax.swing.JLabel();
-        jLabelMiniStatement = new javax.swing.JLabel();
-        jTextField = new javax.swing.JTextField();
-        jLabelTextAboveTexField = new javax.swing.JLabel();
+        jPanelWithdrawCash = new javax.swing.JPanel();
+        jLabeWithdrawCashText = new javax.swing.JLabel();
+        jLabelWithdrawCashValue = new javax.swing.JLabel();
+        jPanelShowBalanceScreen = new javax.swing.JPanel();
+        jLabeShowlBalanceText = new javax.swing.JLabel();
+        jLabelShowBalanceValue = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jBtnBalance = new javax.swing.JButton();
-        jBtnBalanceReciept = new javax.swing.JButton();
         jBtnCash = new javax.swing.JButton();
+        jBtnBalanceReciept = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jBtnChangePin = new javax.swing.JButton();
         jBtnFastCash = new javax.swing.JButton();
@@ -125,12 +136,6 @@ public class ATMS extends javax.swing.JFrame {
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
-            }
-        });
-
-        jButtonEmptyButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonEmptyButton2ActionPerformed(evt);
             }
         });
 
@@ -254,101 +259,152 @@ public class ATMS extends javax.swing.JFrame {
         jPanel4.setBackground(java.awt.Color.white);
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jPanel4.setPreferredSize(new java.awt.Dimension(300, 180));
+        jPanel4.setLayout(new javax.swing.OverlayLayout(jPanel4));
 
-        jLblDisplay.setToolTipText("");
-        jLblDisplay.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jPanelNewPinScreen.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelNewPinScreen.setLayout(new java.awt.GridBagLayout());
 
-        jLabelPin.setText("Enter the PIN");
+        jLabelNewPin.setText("Enter new PIN");
+        jLabelNewPin.setMaximumSize(null);
+        jLabelNewPin.setMinimumSize(null);
+        jLabelNewPin.setPreferredSize(null);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.RELATIVE;
+        jPanelNewPinScreen.add(jLabelNewPin, gridBagConstraints);
+
+        jLabelNewPinValue.setToolTipText("");
+        jLabelNewPinValue.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jLabelNewPinValue.setMaximumSize(null);
+        jLabelNewPinValue.setMinimumSize(null);
+        jLabelNewPinValue.setPreferredSize(new java.awt.Dimension(50, 20));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.RELATIVE;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
+        jPanelNewPinScreen.add(jLabelNewPinValue, gridBagConstraints);
+
+        jPanel4.add(jPanelNewPinScreen);
+
+        jPanelLoginScreen.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelLoginScreen.setLayout(new java.awt.GridBagLayout());
+
+        jLabelPin.setText("Enter PIN");
         jLabelPin.setMaximumSize(new java.awt.Dimension(180, 18));
         jLabelPin.setMinimumSize(new java.awt.Dimension(180, 18));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.RELATIVE;
+        jPanelLoginScreen.add(jLabelPin, gridBagConstraints);
+
+        jLabelPinValue.setToolTipText("");
+        jLabelPinValue.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jLabelPinValue.setMaximumSize(null);
+        jLabelPinValue.setMinimumSize(null);
+        jLabelPinValue.setPreferredSize(new java.awt.Dimension(50, 20));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.RELATIVE;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
+        jPanelLoginScreen.add(jLabelPinValue, gridBagConstraints);
+
+        jPanel4.add(jPanelLoginScreen);
+
+        jPanelMainMenuScreen.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelMainMenuScreen.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanelMainMenuScreen.setMinimumSize(new java.awt.Dimension(180, 42));
+        jPanelMainMenuScreen.setPreferredSize(new java.awt.Dimension(50, 53));
+        jPanelMainMenuScreen.setLayout(new java.awt.GridLayout(1, 2));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
         jLabelBalance.setText("Balance");
-
-        jLabelChangePin.setText("Change Pin");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.ipady = 15;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weighty = 1.0;
+        jPanel1.add(jLabelBalance, gridBagConstraints);
 
         jLabelCash.setText("Cash");
+        jLabelCash.setMaximumSize(null);
+        jLabelCash.setMinimumSize(null);
+        jLabelCash.setPreferredSize(null);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipady = 15;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weighty = 1.0;
+        jPanel1.add(jLabelCash, gridBagConstraints);
 
+        jLabelBalanceReciept.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelBalanceReciept.setText("Balance Reciept");
+        jLabelBalanceReciept.setName(""); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipady = 15;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.weighty = 1.0;
+        jPanel1.add(jLabelBalanceReciept, gridBagConstraints);
+
+        jPanelMainMenuScreen.add(jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new java.awt.GridBagLayout());
+
+        jLabelChangePin.setText("Change Pin");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.ipady = 15;
+        gridBagConstraints.weighty = 1.0;
+        jPanel2.add(jLabelChangePin, gridBagConstraints);
 
         jLabelFastCash.setText("Fast Cash");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipady = 15;
+        gridBagConstraints.weighty = 1.0;
+        jPanel2.add(jLabelFastCash, gridBagConstraints);
 
-        jLabelMiniStatement.setText("Mini Statement");
+        jPanelMainMenuScreen.add(jPanel2);
 
-        jTextField.setEditable(false);
-        jTextField.setMaximumSize(null);
-        jTextField.setMinimumSize(null);
-        jTextField.setPreferredSize(null);
+        jPanel4.add(jPanelMainMenuScreen);
 
-        jLabelTextAboveTexField.setText("Enter amount to withdraw");
-        jLabelTextAboveTexField.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        jLabelTextAboveTexField.setMaximumSize(null);
-        jLabelTextAboveTexField.setMinimumSize(null);
+        jPanelWithdrawCash.setPreferredSize(new java.awt.Dimension(200, 174));
+        jPanelWithdrawCash.setLayout(new java.awt.GridBagLayout());
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabelBalance)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabelChangePin))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabelBalanceReciept)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabelMiniStatement))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabelCash, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelTextAboveTexField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelFastCash))
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelPin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLblDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 104, Short.MAX_VALUE)))))
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabelBalance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelChangePin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(7, 7, 7)
-                .addComponent(jLabelPin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelFastCash, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelCash, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelBalanceReciept)
-                            .addComponent(jLabelMiniStatement, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(16, 16, 16))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLblDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelTextAboveTexField, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
+        jLabeWithdrawCashText.setText("Enter amount to withdraw");
+        jLabeWithdrawCashText.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        jPanelWithdrawCash.add(jLabeWithdrawCashText, new java.awt.GridBagConstraints());
+
+        jLabelWithdrawCashValue.setMaximumSize(null);
+        jLabelWithdrawCashValue.setMinimumSize(null);
+        jLabelWithdrawCashValue.setPreferredSize(null);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        jPanelWithdrawCash.add(jLabelWithdrawCashValue, gridBagConstraints);
+
+        jPanel4.add(jPanelWithdrawCash);
+
+        jPanelShowBalanceScreen.setPreferredSize(new java.awt.Dimension(200, 174));
+        jPanelShowBalanceScreen.setLayout(new java.awt.GridBagLayout());
+
+        jLabeShowlBalanceText.setText("Your balance is");
+        jLabeShowlBalanceText.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        jPanelShowBalanceScreen.add(jLabeShowlBalanceText, new java.awt.GridBagConstraints());
+
+        jLabelShowBalanceValue.setMaximumSize(null);
+        jLabelShowBalanceValue.setMinimumSize(null);
+        jLabelShowBalanceValue.setPreferredSize(null);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        jPanelShowBalanceScreen.add(jLabelShowBalanceValue, gridBagConstraints);
+
+        jPanel4.add(jPanelShowBalanceScreen);
 
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jPanel5.setLayout(new java.awt.GridBagLayout());
 
         jBtnBalance.setLabel("->");
         jBtnBalance.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -361,8 +417,13 @@ public class ATMS extends javax.swing.JFrame {
                 jBtnBalanceActionPerformed(evt);
             }
         });
-
-        jBtnBalanceReciept.setLabel("->");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 40;
+        gridBagConstraints.ipady = 15;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 10);
+        jPanel5.add(jBtnBalance, gridBagConstraints);
 
         jBtnCash.setLabel("->");
         jBtnCash.addActionListener(new java.awt.event.ActionListener() {
@@ -370,34 +431,38 @@ public class ATMS extends javax.swing.JFrame {
                 jBtnCashActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 40;
+        gridBagConstraints.ipady = 15;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 10);
+        jPanel5.add(jBtnCash, gridBagConstraints);
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jBtnBalance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBtnBalanceReciept, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBtnCash, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jBtnBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBtnCash, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jBtnBalanceReciept, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jBtnBalanceReciept.setLabel("->");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 40;
+        gridBagConstraints.ipady = 15;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 10);
+        jPanel5.add(jBtnBalanceReciept, gridBagConstraints);
 
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jPanel6.setLayout(new java.awt.GridBagLayout());
 
         jBtnChangePin.setLabel("<-");
+        jBtnChangePin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnChangePinActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.ipadx = 40;
+        gridBagConstraints.ipady = 15;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 10);
+        jPanel6.add(jBtnChangePin, gridBagConstraints);
 
         jBtnFastCash.setLabel("<-");
         jBtnFastCash.addActionListener(new java.awt.event.ActionListener() {
@@ -405,32 +470,22 @@ public class ATMS extends javax.swing.JFrame {
                 jBtnFastCashActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.ipadx = 40;
+        gridBagConstraints.ipady = 15;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 10);
+        jPanel6.add(jBtnFastCash, gridBagConstraints);
 
         jBtnMiniStatement.setLabel("<-");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBtnChangePin, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
-                    .addComponent(jBtnFastCash, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jBtnMiniStatement, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jBtnChangePin, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(jBtnFastCash, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jBtnMiniStatement, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 40;
+        gridBagConstraints.ipady = 15;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 10);
+        jPanel6.add(jBtnMiniStatement, gridBagConstraints);
 
         jTextAreaSide.setColumns(20);
         jTextAreaSide.setFont(new java.awt.Font("TlwgTypewriter", 0, 14)); // NOI18N
@@ -454,7 +509,7 @@ public class ATMS extends javax.swing.JFrame {
                         .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(59, 59, 59)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -476,212 +531,406 @@ public class ATMS extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    // Enum for states of the app
     enum STATE {
         BALANCE, CASH, BALANCE_RECEIPT, CHANGE_PIN, FAST_CASH, MINI_STATEMENT,
         LOGGED_IN_MAIN_MENU, LOGGED_OUT;
     }
 
+    // Object of the above enum and is set to logged out when the app starts
     private STATE applicationState = STATE.LOGGED_OUT;
 
+    // Setting a default balance for the default user
     private int balance = 200000;
 
-    private void showMainMenu() {
-        jLabelBalance.setVisible(true);
-        jLabelCash.setVisible(true);
-        jLabelBalanceReciept.setVisible(true);
-        jLabelChangePin.setVisible(true);
-        jLabelMiniStatement.setVisible(true);
-        jLabelFastCash.setVisible(true);
-        jLabelTextAboveTexField.setVisible(false);
-        jTextField.setVisible(false);
-        applicationState = STATE.LOGGED_IN_MAIN_MENU;
+    // Default pin
+    private int PIN = 1234;
+
+    private void setState(STATE state) {
+        applicationState = state;
+        setScreen();
     }
 
-    private void hideMainMenu() {
-        jLabelBalance.setVisible(false);
-        jLabelCash.setVisible(false);
-        jLabelBalanceReciept.setVisible(false);
-        jLabelChangePin.setVisible(false);
-        jLabelMiniStatement.setVisible(false);
-        jLabelFastCash.setVisible(false);
-    }
-
-    private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton0ActionPerformed
-        // TODO add your handling code here:
-        if (applicationState == STATE.LOGGED_OUT)
-            jLblDisplay.setText(jLblDisplay.getText() + "0");
-        else if (applicationState == STATE.CASH)
-            jTextField.setText(jTextField.getText() + "0");
-
-    }//GEN-LAST:event_jButton0ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        if (applicationState == STATE.LOGGED_OUT)
-            jLblDisplay.setText(jLblDisplay.getText() + "1");
-        else if (applicationState == STATE.CASH)
-            jTextField.setText(jTextField.getText() + "1");
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        if (applicationState == STATE.LOGGED_OUT)
-            jLblDisplay.setText(jLblDisplay.getText() + "2");
-        else if (applicationState == STATE.CASH)
-            jTextField.setText(jTextField.getText() + "2");
-
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        if (applicationState == STATE.LOGGED_OUT)
-            jLblDisplay.setText(jLblDisplay.getText() + "3");
-        else if (applicationState == STATE.CASH)
-            jTextField.setText(jTextField.getText() + "3");
-
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        if (applicationState == STATE.LOGGED_OUT)
-            jLblDisplay.setText(jLblDisplay.getText() + "4");
-        else if (applicationState == STATE.CASH)
-            jTextField.setText(jTextField.getText() + "4");
-
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        if (applicationState == STATE.LOGGED_OUT)
-            jLblDisplay.setText(jLblDisplay.getText() + "5");
-        else if (applicationState == STATE.CASH)
-            jTextField.setText(jTextField.getText() + "5");
-
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        if (applicationState == STATE.LOGGED_OUT)
-            jLblDisplay.setText(jLblDisplay.getText() + "6");
-        else if (applicationState == STATE.CASH)
-            jTextField.setText(jTextField.getText() + "6");
-
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-        if (applicationState == STATE.LOGGED_OUT)
-            jLblDisplay.setText(jLblDisplay.getText() + "7");
-        else if (applicationState == STATE.CASH)
-            jTextField.setText(jTextField.getText() + "7");
-
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-        if (applicationState == STATE.LOGGED_OUT)
-            jLblDisplay.setText(jLblDisplay.getText() + "8");
-        else if (applicationState == STATE.CASH)
-            jTextField.setText(jTextField.getText() + "8");
-
-    }//GEN-LAST:event_jButton8ActionPerformed
-
-    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-        if (applicationState == STATE.LOGGED_OUT)
-            jLblDisplay.setText(jLblDisplay.getText() + "9");
-        else if (applicationState == STATE.CASH)
-            jTextField.setText(jTextField.getText() + "9");
-
-    }//GEN-LAST:event_jButton9ActionPerformed
-
-    private void jButtonEmptyButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEmptyButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonEmptyButton2ActionPerformed
-
-    private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
-        // TODO add your handling code here:
-        if (applicationState == STATE.BALANCE) {
-            showMainMenu();
-        } else if (applicationState == STATE.LOGGED_IN_MAIN_MENU) {
-            System.exit(0);
-        } else if (applicationState == STATE.CASH) {
-            showMainMenu();
-        }
-    }//GEN-LAST:event_jButtonCancelActionPerformed
-
-    private void jBtnBalanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnBalanceMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnBalanceMouseClicked
-
-    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
-        jLabelBalance.setVisible(false);
-        jLabelCash.setVisible(false);
-        jLabelBalanceReciept.setVisible(false);
-        jLabelChangePin.setVisible(false);
-        jLabelMiniStatement.setVisible(false);
-        jLabelFastCash.setVisible(false);
-        jTextField.setVisible(false);
-        jLabelTextAboveTexField.setVisible(false);
-
+    private void disableAllSideButtons() {
         jBtnBalance.setEnabled(false);
         jBtnCash.setEnabled(false);
         jBtnBalanceReciept.setEnabled(false);
         jBtnChangePin.setEnabled(false);
         jBtnMiniStatement.setEnabled(false);
         jBtnFastCash.setEnabled(false);
+    }
+
+    private void enableAllSideButtons() {
+        jBtnBalance.setEnabled(true);
+        jBtnCash.setEnabled(true);
+        jBtnBalanceReciept.setEnabled(true);
+        jBtnChangePin.setEnabled(true);
+        jBtnMiniStatement.setEnabled(true);
+        jBtnFastCash.setEnabled(true);
+    }
+
+    private void showLoginScreen() {
+        jPanelLoginScreen.setVisible(true);
+        jPanelMainMenuScreen.setVisible(false);
+        jPanelNewPinScreen.setVisible(false);
+        jPanelShowBalanceScreen.setVisible(false);
+        jPanelWithdrawCash.setVisible(false);
+    }
+
+    private void showMainMenu() {
+        jPanelMainMenuScreen.setVisible(true);
+        jPanelLoginScreen.setVisible(false);
+        jPanelNewPinScreen.setVisible(false);
+        jPanelShowBalanceScreen.setVisible(false);
+        jPanelWithdrawCash.setVisible(false);
+    }
+
+    private void showBalance() {
+        jPanelShowBalanceScreen.setVisible(true);
+        jPanelMainMenuScreen.setVisible(false);
+        jPanelLoginScreen.setVisible(false);
+        jPanelNewPinScreen.setVisible(false);
+        jPanelWithdrawCash.setVisible(false);
+    }
+
+    private void showWithdrawCash() {
+        jPanelWithdrawCash.setVisible(true);
+        jPanelShowBalanceScreen.setVisible(false);
+        jPanelMainMenuScreen.setVisible(false);
+        jPanelLoginScreen.setVisible(false);
+        jPanelNewPinScreen.setVisible(false);
+    }
+
+    private void showNewPin() {
+        jPanelNewPinScreen.setVisible(true);
+        jPanelWithdrawCash.setVisible(false);
+        jPanelShowBalanceScreen.setVisible(false);
+        jPanelMainMenuScreen.setVisible(false);
+        jPanelLoginScreen.setVisible(false);
+    }
+
+    private void setScreen() {
+        switch (applicationState) {
+            case LOGGED_OUT:
+                showLoginScreen();
+                disableAllSideButtons();
+                break;
+            case LOGGED_IN_MAIN_MENU:
+                showMainMenu();
+                enableAllSideButtons();
+                break;
+            case BALANCE:
+                showBalance();
+                disableAllSideButtons();
+                break;
+            case CASH:
+                showWithdrawCash();
+                disableAllSideButtons();
+                break;
+            case BALANCE_RECEIPT:
+                break;
+            case CHANGE_PIN:
+                showNewPin();
+                disableAllSideButtons();
+                break;
+            case FAST_CASH:
+                break;
+        }
+    }
+
+    // Function called when 0 is clicked
+    private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton0ActionPerformed
+        // TODO add your handling code here:
+        javax.swing.JLabel label = null;
+        switch (applicationState) {
+            case LOGGED_OUT:
+                label = jLabelPinValue;
+                break;
+            case CASH:
+                label = jLabelWithdrawCashValue;
+                break;
+            case CHANGE_PIN:
+                label = jLabelNewPinValue;
+                break;
+        }
+        if (label != null)
+            label.setText(label.getText() + "0");
+
+    }//GEN-LAST:event_jButton0ActionPerformed
+
+    // Function called when 1 is clicked
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        javax.swing.JLabel label = null;
+        switch (applicationState) {
+            case LOGGED_OUT:
+                label = jLabelPinValue;
+                break;
+            case CASH:
+                label = jLabelWithdrawCashValue;
+                break;
+            case CHANGE_PIN:
+                label = jLabelNewPinValue;
+                break;
+        }
+        if (label != null)
+            label.setText(label.getText() + "1");
 
 
-    }//GEN-LAST:event_formWindowActivated
+    }//GEN-LAST:event_jButton1ActionPerformed
 
+    // Function called when 2 is clicked
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        javax.swing.JLabel label = null;
+        switch (applicationState) {
+            case LOGGED_OUT:
+                label = jLabelPinValue;
+                break;
+            case CASH:
+                label = jLabelWithdrawCashValue;
+                break;
+            case CHANGE_PIN:
+                label = jLabelNewPinValue;
+                break;
+        }
+        if (label != null)
+            label.setText(label.getText() + "2");
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    // Function called when 3 is clicked
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        javax.swing.JLabel label = null;
+        switch (applicationState) {
+            case LOGGED_OUT:
+                label = jLabelPinValue;
+                break;
+            case CASH:
+                label = jLabelWithdrawCashValue;
+                break;
+            case CHANGE_PIN:
+                label = jLabelNewPinValue;
+                break;
+        }
+        if (label != null)
+            label.setText(label.getText() + "3");
+
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    // Function called when 4 is clicked
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        javax.swing.JLabel label = null;
+        switch (applicationState) {
+            case LOGGED_OUT:
+                label = jLabelPinValue;
+                break;
+            case CASH:
+                label = jLabelWithdrawCashValue;
+                break;
+            case CHANGE_PIN:
+                label = jLabelNewPinValue;
+                break;
+        }
+        if (label != null)
+            label.setText(label.getText() + "4");
+
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    // Function called when 5 is clicked
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        javax.swing.JLabel label = null;
+        switch (applicationState) {
+            case LOGGED_OUT:
+                label = jLabelPinValue;
+                break;
+            case CASH:
+                label = jLabelWithdrawCashValue;
+                break;
+            case CHANGE_PIN:
+                label = jLabelNewPinValue;
+                break;
+        }
+        if (label != null)
+            label.setText(label.getText() + "5");
+
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    // Function called when 6 is clicked
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        javax.swing.JLabel label = null;
+        switch (applicationState) {
+            case LOGGED_OUT:
+                label = jLabelPinValue;
+                break;
+            case CASH:
+                label = jLabelWithdrawCashValue;
+                break;
+            case CHANGE_PIN:
+                label = jLabelNewPinValue;
+                break;
+        }
+        if (label != null)
+            label.setText(label.getText() + "6");
+
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    // Function called when 7 is clicked
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        javax.swing.JLabel label = null;
+        switch (applicationState) {
+            case LOGGED_OUT:
+                label = jLabelPinValue;
+                break;
+            case CASH:
+                label = jLabelWithdrawCashValue;
+                break;
+            case CHANGE_PIN:
+                label = jLabelNewPinValue;
+                break;
+        }
+        if (label != null)
+            label.setText(label.getText() + "7");
+
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    // Function called when 8 is clicked
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        javax.swing.JLabel label = null;
+        switch (applicationState) {
+            case LOGGED_OUT:
+                label = jLabelPinValue;
+                break;
+            case CASH:
+                label = jLabelWithdrawCashValue;
+                break;
+            case CHANGE_PIN:
+                label = jLabelNewPinValue;
+                break;
+        }
+        if (label != null)
+            label.setText(label.getText() + "8");
+
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    // Function called when 9 is clicked
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // TODO add your handling code here:
+        javax.swing.JLabel label = null;
+        switch (applicationState) {
+            case LOGGED_OUT:
+                label = jLabelPinValue;
+                break;
+            case CASH:
+                label = jLabelWithdrawCashValue;
+                break;
+            case CHANGE_PIN:
+                label = jLabelNewPinValue;
+                break;
+        }
+        if (label != null)
+            label.setText(label.getText() + "9");
+
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    // Function called when "Cancel" is clicked
+    private void jButtonCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelActionPerformed
+        // TODO add your handling code here:
+        if (applicationState == STATE.BALANCE) {
+            setState(STATE.LOGGED_IN_MAIN_MENU);
+        } else if (applicationState == STATE.LOGGED_IN_MAIN_MENU) {
+            System.exit(0);
+        } else if (applicationState == STATE.CASH) {
+            setState(STATE.LOGGED_IN_MAIN_MENU);
+        }
+    }//GEN-LAST:event_jButtonCancelActionPerformed
+
+    // Function called when "Clear" is clicked
     private void jButtonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClearActionPerformed
-        if (applicationState == STATE.LOGGED_OUT)
-            jLblDisplay.setText("");
-        else if (applicationState == STATE.CASH)
-            jTextField.setText("");
+        javax.swing.JLabel label = null;
+        switch (applicationState) {
+            case LOGGED_OUT:
+                label = jLabelPinValue;
+                break;
+            case CASH:
+                label = jLabelWithdrawCashValue;
+                break;
+            case CHANGE_PIN:
+                label = jLabelNewPinValue;
+                break;
+        }
+        if (label != null)
+            label.setText("");
     }//GEN-LAST:event_jButtonClearActionPerformed
 
+    // Function called when button corresponding to "Balance Receipt" is clicked in the main menu
+    private void jBtnBalanceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnBalanceMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnBalanceMouseClicked
+
+    // Function called when "Enter" is clicked
     private void jButtonEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnterActionPerformed
+        // If user has not yet logged in
         if (applicationState == STATE.LOGGED_OUT) {
-            int PIN = 1234;
-            if (PIN == Integer.parseInt(jLblDisplay.getText())) {
-                applicationState = STATE.LOGGED_IN_MAIN_MENU;
-                jTextField.setVisible(false);
-                jLabelBalance.setVisible(true);
-                jLabelCash.setVisible(true);
-                jLabelBalanceReciept.setVisible(true);
-                jLabelChangePin.setVisible(true);
-                jLabelMiniStatement.setVisible(true);
-                jLabelFastCash.setVisible(true);
-                jLabelPin.setVisible(false);
-                jLblDisplay.setVisible(false);
-                jBtnBalance.setEnabled(true);
-                jBtnCash.setEnabled(true);
-                jBtnBalanceReciept.setEnabled(true);
-                jBtnChangePin.setEnabled(true);
-                jBtnMiniStatement.setEnabled(true);
-                jBtnFastCash.setEnabled(true);
+            if (PIN == Integer.parseInt(jLabelPinValue.getText())) {
+                // Changing state to main menu
+                setState(STATE.LOGGED_IN_MAIN_MENU);
             } else {
+                // Showing error message instead of "Enter the PIN" text
                 jLabelPin.setText("Please enter a valid pin");
             }
-        } if (applicationState == STATE.CASH) {
+        }
+        // If user is withdrawing cash
+        else if (applicationState == STATE.CASH) {
             int withdrawnMoney;
             try {
-                withdrawnMoney  = Integer.parseInt(jTextField.getText());
+                // Parsing the amount entered as an Integer
+                withdrawnMoney  = Integer.parseInt(jLabelWithdrawCashValue.getText());
+                // If money to withdraw is more than balance we show "Invalid" in the TextField where the user has
+                // entered the balance
                 if (withdrawnMoney > balance || withdrawnMoney == 0) {
-                    jTextField.setText("Invalid");
+                    jLabelWithdrawCashValue.setText("Invalid");
                     return;
-                } else {
-                    balance -= withdrawnMoney;
-                    showMainMenu();
                 }
-            } catch (Exception e) {
-                jTextField.setText("Invalid");
+                // If money is less than balance then accept the withdrawal and reduce balance
+                else {
+                    balance -= withdrawnMoney;
+                    // Going back to the main menu after accepting the withdrawal
+                    setState(STATE.LOGGED_IN_MAIN_MENU);
+                }
+            }
+            // If it fails for some reason we'll aske the user to re-enter
+            catch (Exception e) {
+                jLabelWithdrawCashValue.setText("Invalid");
+            }
+        }
+        else if (applicationState == STATE.CHANGE_PIN) {
+            try {
+                int newPin = Integer.parseInt(jLabelNewPinValue.getText());
+                if (newPin/10000 <= 0) {
+                    PIN = newPin;
+                    setState(STATE.LOGGED_IN_MAIN_MENU);
+                } else {
+                    jLabelNewPin.setText("Invalid pin. Please enter a 4 digit pin");
+                }
+            } catch (Exception e){
+                jLabelNewPin.setText("Invalid pin. Please enter a 4 digit pin");
             }
         }
 
     }//GEN-LAST:event_jButtonEnterActionPerformed
+
+
+    // Called when window is created
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        setState(applicationState);
+    }//GEN-LAST:event_formWindowActivated
 
     private void jBtnFastCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnFastCashActionPerformed
         // TODO add your handling code here:
@@ -689,28 +938,20 @@ public class ATMS extends javax.swing.JFrame {
 
     private void jBtnBalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnBalanceActionPerformed
         // String balance = 10000;
-        if (applicationState == STATE.LOGGED_IN_MAIN_MENU) {
-            applicationState = STATE.BALANCE;
-            jTextField.setText(String.valueOf(balance));
-            jTextField.setVisible(true);
-            jLabelTextAboveTexField.setText("<html>"+"Balance"+"</html>");
-            jLabelTextAboveTexField.setVisible(true);
-            hideMainMenu();
-        }
+        setState(STATE.BALANCE);
+        jLabelShowBalanceValue.setText(String.valueOf(balance));
 
     }//GEN-LAST:event_jBtnBalanceActionPerformed
 
     private void jBtnCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCashActionPerformed
         // TODO add your handling code here:
-        if (applicationState == STATE.LOGGED_IN_MAIN_MENU) {
-            applicationState = STATE.CASH;
-            jTextField.setText("");
-            jTextField.setVisible(true);
-            jLabelTextAboveTexField.setText("<html>"+"Enter amount to withdraw"+"</html>");
-            jLabelTextAboveTexField.setVisible(true);
-            hideMainMenu();
-        }
+        setState(STATE.CASH);
     }//GEN-LAST:event_jBtnCashActionPerformed
+
+    private void jBtnChangePinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnChangePinActionPerformed
+        // TODO add your handling code here:
+        setState(STATE.CHANGE_PIN);
+    }//GEN-LAST:event_jBtnChangePinActionPerformed
 
     /**
      * @param args the command line arguments
@@ -770,21 +1011,31 @@ public class ATMS extends javax.swing.JFrame {
     private javax.swing.JButton jButtonEmptyButton2;
     private javax.swing.JButton jButtonEmptyButton3;
     private javax.swing.JButton jButtonEnter;
+    private javax.swing.JLabel jLabeShowlBalanceText;
+    private javax.swing.JLabel jLabeWithdrawCashText;
     private javax.swing.JLabel jLabelBalance;
     private javax.swing.JLabel jLabelBalanceReciept;
     private javax.swing.JLabel jLabelCash;
     private javax.swing.JLabel jLabelChangePin;
     private javax.swing.JLabel jLabelFastCash;
-    private javax.swing.JLabel jLabelMiniStatement;
+    private javax.swing.JLabel jLabelNewPin;
+    private javax.swing.JLabel jLabelNewPinValue;
     private javax.swing.JLabel jLabelPin;
-    private javax.swing.JLabel jLabelTextAboveTexField;
-    private javax.swing.JLabel jLblDisplay;
+    private javax.swing.JLabel jLabelPinValue;
+    private javax.swing.JLabel jLabelShowBalanceValue;
+    private javax.swing.JLabel jLabelWithdrawCashValue;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanelLoginScreen;
+    private javax.swing.JPanel jPanelMainMenuScreen;
+    private javax.swing.JPanel jPanelNewPinScreen;
+    private javax.swing.JPanel jPanelShowBalanceScreen;
+    private javax.swing.JPanel jPanelWithdrawCash;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextAreaSide;
-    private javax.swing.JTextField jTextField;
     // End of variables declaration//GEN-END:variables
 }
