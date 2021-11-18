@@ -1012,6 +1012,9 @@ public class ATMS extends javax.swing.JFrame {
         } else if (applicationState == STATE.BALANCE_RECEIPT) {
             jTextAreaSide.setText("");
             setState(STATE.LOGGED_IN_MAIN_MENU);
+        } else if (applicationState == STATE.CHANGE_PIN) {
+            jLabelNewPinValue.setText("");
+            setState(STATE.LOGGED_IN_MAIN_MENU);
         }
     }//GEN-LAST:event_jButtonCancelActionPerformed
 
@@ -1067,6 +1070,7 @@ public class ATMS extends javax.swing.JFrame {
                     balance -= withdrawnMoney;
                     // Going back to the main menu after accepting the withdrawal
                     setState(STATE.LOGGED_IN_MAIN_MENU);
+                    jLabelWithdrawCashValue.setText("");
                 }
             }
             // If it fails for some reason we'll aske the user to re-enter
@@ -1077,9 +1081,11 @@ public class ATMS extends javax.swing.JFrame {
         else if (applicationState == STATE.CHANGE_PIN) {
             try {
                 int newPin = Integer.parseInt(jLabelNewPinValue.getText());
-                if (newPin/10000 <= 0) {
+                if (newPin/10000 <= 0 && newPin/1000 > 0) {
                     PIN = newPin;
                     setState(STATE.LOGGED_IN_MAIN_MENU);
+                    jLabelNewPinValue.setText("");
+                    jLabelNewPin.setText("Enter new PIN");
                 } else {
                     jLabelNewPin.setText("Invalid pin. Please enter a 4 digit pin");
                 }
