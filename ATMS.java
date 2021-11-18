@@ -5,6 +5,8 @@
 package ATM_system;
 
 import javax.swing.JOptionPane;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 /**
@@ -602,6 +604,7 @@ public class ATMS extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 10);
         jPanel6.add(jBtnRightPanel3, gridBagConstraints);
 
+        jTextAreaSide.setEditable(false);
         jTextAreaSide.setColumns(20);
         jTextAreaSide.setFont(new java.awt.Font("TlwgTypewriter", 0, 14)); // NOI18N
         jTextAreaSide.setRows(5);
@@ -738,6 +741,25 @@ public class ATMS extends javax.swing.JFrame {
         jPanelLoginScreen.setVisible(false);
     }
 
+    private void showBalanceReceipt() {
+        jPanelFastCashScreen.setVisible(false);
+        jPanelNewPinScreen.setVisible(false);
+        jPanelWithdrawCash.setVisible(false);
+        jPanelShowBalanceScreen.setVisible(false);
+        jPanelMainMenuScreen.setVisible(false);
+        jPanelLoginScreen.setVisible(false);
+
+        ZoneId zonedId = ZoneId.of("Asia/Kolkata");
+        ZonedDateTime zdt = ZonedDateTime.now( zonedId );
+
+        String billText = "                  Balace BILL                 \n" +
+                "=========================\n" +
+                "Date:\t" + zdt + "\n" +
+                "Balance:\tRs " + balance + "";
+
+        jTextAreaSide.setText(billText);
+    }
+
     private void setScreen() {
         switch (applicationState) {
             case LOGGED_OUT:
@@ -758,6 +780,8 @@ public class ATMS extends javax.swing.JFrame {
                 disableAllSideButtons();
                 break;
             case BALANCE_RECEIPT:
+                showBalanceReceipt();
+                disableAllSideButtons();
                 break;
             case CHANGE_PIN:
                 showNewPin();
@@ -984,6 +1008,9 @@ public class ATMS extends javax.swing.JFrame {
             setState(STATE.LOGGED_IN_MAIN_MENU);
         } else if (applicationState == STATE.FAST_CASH) {
             jLabelWarningFastCash.setText("");
+            setState(STATE.LOGGED_IN_MAIN_MENU);
+        } else if (applicationState == STATE.BALANCE_RECEIPT) {
+            jTextAreaSide.setText("");
             setState(STATE.LOGGED_IN_MAIN_MENU);
         }
     }//GEN-LAST:event_jButtonCancelActionPerformed
