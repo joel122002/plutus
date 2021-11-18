@@ -202,7 +202,7 @@ public class ATMS extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(50, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -224,7 +224,7 @@ public class ATMS extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                         .addComponent(jButtonClear, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButtonEmptyButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -285,6 +285,7 @@ public class ATMS extends javax.swing.JFrame {
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
         jLabelBalance.setText("Balance");
+        jLabelBalance.setMaximumSize(new java.awt.Dimension(70, 18));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.ipady = 15;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
@@ -564,6 +565,11 @@ public class ATMS extends javax.swing.JFrame {
         jPanel6.setLayout(new java.awt.GridBagLayout());
 
         jBtnRightPanel1.setLabel("<-");
+        jBtnRightPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBtnRightPanel1MouseClicked(evt);
+            }
+        });
         jBtnRightPanel1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnRightPanel1ActionPerformed(evt);
@@ -616,18 +622,18 @@ public class ATMS extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(91, 91, 91)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(59, 59, 59)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(178, Short.MAX_VALUE))
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -752,10 +758,17 @@ public class ATMS extends javax.swing.JFrame {
         ZoneId zonedId = ZoneId.of("Asia/Kolkata");
         ZonedDateTime zdt = ZonedDateTime.now( zonedId );
 
-        String billText = "                  Balace BILL                 \n" +
-                "=========================\n" +
-                "Date:\t" + zdt + "\n" +
-                "Balance:\tRs " + balance + "";
+        String billText = "                   XYZ Bank                    \n" +
+                
+                 "Sudham Corner 30th Road,Linking Rd, Bandra West\n"+
+                 zdt + "\n" +
+                 "ATM NO: S1ANBL78\n"+
+                "-----------------------------------------------------\n\n\n" +
+                
+                "Available Balance:\tRs. " + balance + "\n\n\n\n\n\n\n"+
+                "-----------------------------------------------------\n" +
+                  "Thank you, Please Visit again.\n"+
+                   "Toll Free: 1800 180 2222";
 
         jTextAreaSide.setText(billText);
     }
@@ -1081,11 +1094,16 @@ public class ATMS extends javax.swing.JFrame {
         else if (applicationState == STATE.CHANGE_PIN) {
             try {
                 int newPin = Integer.parseInt(jLabelNewPinValue.getText());
-                if (newPin/10000 <= 0 && newPin/1000 > 0) {
-                    PIN = newPin;
-                    setState(STATE.LOGGED_IN_MAIN_MENU);
-                    jLabelNewPinValue.setText("");
-                    jLabelNewPin.setText("Enter new PIN");
+                if (newPin/10000 <= 0 && newPin/1000 > 0 ){
+                    if(newPin == PIN){
+                        jLabelNewPin.setText("Invalid pin. Please enter a new pin"); 
+                    }else{
+                        PIN = newPin;
+                        setState(STATE.LOGGED_IN_MAIN_MENU);
+                        jLabelNewPinValue.setText("");
+                        jLabelNewPin.setText("Enter new PIN");
+                    }
+                    
                 } else {
                     jLabelNewPin.setText("Invalid pin. Please enter a 4 digit pin");
                 }
@@ -1130,9 +1148,10 @@ public class ATMS extends javax.swing.JFrame {
         } else if (applicationState == STATE.FAST_CASH) {
             try {
                 int withdrawnMoney = Integer.parseInt(jLabelRs500.getText());
+          
                 if (withdrawnMoney > balance) {
                     jLabelWarningFastCash.setText("Amount greater than balance");
-                } else {
+                }else {
                     balance -= withdrawnMoney;
                     setState(STATE.LOGGED_IN_MAIN_MENU);
                 }
@@ -1219,6 +1238,10 @@ public class ATMS extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jBtnRightPanel3ActionPerformed
+
+    private void jBtnRightPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBtnRightPanel1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnRightPanel1MouseClicked
 
     /**
      * @param args the command line arguments
