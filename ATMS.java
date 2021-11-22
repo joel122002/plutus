@@ -20,6 +20,7 @@ public class ATMS extends javax.swing.JFrame {
      */
     public ATMS() {
         initComponents();
+        databaseOperations = new DatabaseOperations();
     }
 
     /**
@@ -50,6 +51,12 @@ public class ATMS extends javax.swing.JFrame {
         jButton8 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        jPanelCardNumber = new javax.swing.JPanel();
+        jLabelCardNumber = new javax.swing.JLabel();
+        jLabelCardNo = new javax.swing.JLabel();
+        jPanelLoginScreen = new javax.swing.JPanel();
+        jLabelPin = new javax.swing.JLabel();
+        jLabelPinValue = new javax.swing.JLabel();
         jPanelMainMenuScreen = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabelBalance = new javax.swing.JLabel();
@@ -73,12 +80,6 @@ public class ATMS extends javax.swing.JFrame {
         jPanelNewPinScreen = new javax.swing.JPanel();
         jLabelNewPin = new javax.swing.JLabel();
         jLabelNewPinValue = new javax.swing.JLabel();
-        jPanelCardNumber = new javax.swing.JPanel();
-        jLabelCardNumber = new javax.swing.JLabel();
-        jLabelCardNo = new javax.swing.JLabel();
-        jPanelLoginScreen = new javax.swing.JPanel();
-        jLabelPin = new javax.swing.JLabel();
-        jLabelPinValue = new javax.swing.JLabel();
         jPanelWithdrawCash = new javax.swing.JPanel();
         jLabeWithdrawCashText = new javax.swing.JLabel();
         jLabelWithdrawCashValue = new javax.swing.JLabel();
@@ -278,6 +279,63 @@ public class ATMS extends javax.swing.JFrame {
         jPanel4.setPreferredSize(new java.awt.Dimension(300, 180));
         jPanel4.setLayout(new javax.swing.OverlayLayout(jPanel4));
 
+        jPanelCardNumber.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jPanelCardNumber.setMinimumSize(new java.awt.Dimension(180, 42));
+        jPanelCardNumber.setPreferredSize(new java.awt.Dimension(65, 58));
+        jPanelCardNumber.setLayout(new java.awt.GridBagLayout());
+
+        jLabelCardNumber.setText("Enter your Card Number.");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.RELATIVE;
+        gridBagConstraints.gridheight = java.awt.GridBagConstraints.RELATIVE;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 10, 0);
+        jPanelCardNumber.add(jLabelCardNumber, gridBagConstraints);
+
+        jLabelCardNo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabelCardNo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jLabelCardNo.setMaximumSize(new java.awt.Dimension(150, 18));
+        jLabelCardNo.setMinimumSize(new java.awt.Dimension(150, 18));
+        jLabelCardNo.setName(""); // NOI18N
+        jLabelCardNo.setPreferredSize(new java.awt.Dimension(150, 18));
+        jLabelCardNo.setRequestFocusEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.RELATIVE;
+        gridBagConstraints.gridheight = java.awt.GridBagConstraints.RELATIVE;
+        gridBagConstraints.ipadx = 50;
+        gridBagConstraints.ipady = 22;
+        jPanelCardNumber.add(jLabelCardNo, gridBagConstraints);
+
+        jPanel4.add(jPanelCardNumber);
+
+        jPanelLoginScreen.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jPanelLoginScreen.setLayout(new java.awt.GridBagLayout());
+
+        jLabelPin.setText("Enter PIN");
+        jLabelPin.setMaximumSize(new java.awt.Dimension(180, 18));
+        jLabelPin.setMinimumSize(new java.awt.Dimension(180, 18));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.RELATIVE;
+        jPanelLoginScreen.add(jLabelPin, gridBagConstraints);
+
+        jLabelPinValue.setToolTipText("");
+        jLabelPinValue.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jLabelPinValue.setMaximumSize(null);
+        jLabelPinValue.setMinimumSize(null);
+        jLabelPinValue.setPreferredSize(new java.awt.Dimension(50, 20));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.RELATIVE;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
+        jPanelLoginScreen.add(jLabelPinValue, gridBagConstraints);
+
+        jPanel4.add(jPanelLoginScreen);
+
         jPanelMainMenuScreen.setBackground(new java.awt.Color(255, 255, 255));
         jPanelMainMenuScreen.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanelMainMenuScreen.setMinimumSize(new java.awt.Dimension(180, 42));
@@ -458,63 +516,6 @@ public class ATMS extends javax.swing.JFrame {
 
         jPanel4.add(jPanelNewPinScreen);
 
-        jPanelCardNumber.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jPanelCardNumber.setMinimumSize(new java.awt.Dimension(180, 42));
-        jPanelCardNumber.setPreferredSize(new java.awt.Dimension(65, 58));
-        jPanelCardNumber.setLayout(new java.awt.GridBagLayout());
-
-        jLabelCardNumber.setText("Enter your Card Number.");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 22;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(31, 73, 0, 62);
-        jPanelCardNumber.add(jLabelCardNumber, gridBagConstraints);
-
-        jLabelCardNo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLabelCardNo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jLabelCardNo.setMaximumSize(new java.awt.Dimension(100, 18));
-        jLabelCardNo.setMinimumSize(new java.awt.Dimension(100, 18));
-        jLabelCardNo.setName(""); // NOI18N
-        jLabelCardNo.setPreferredSize(new java.awt.Dimension(100, 18));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.ipadx = 170;
-        gridBagConstraints.ipady = 22;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(1, 1, 1, 1);
-        jPanelCardNumber.add(jLabelCardNo, gridBagConstraints);
-
-        jPanel4.add(jPanelCardNumber);
-
-        jPanelLoginScreen.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jPanelLoginScreen.setLayout(new java.awt.GridBagLayout());
-
-        jLabelPin.setText("Enter PIN");
-        jLabelPin.setMaximumSize(new java.awt.Dimension(180, 18));
-        jLabelPin.setMinimumSize(new java.awt.Dimension(180, 18));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.RELATIVE;
-        jPanelLoginScreen.add(jLabelPin, gridBagConstraints);
-
-        jLabelPinValue.setToolTipText("");
-        jLabelPinValue.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jLabelPinValue.setMaximumSize(null);
-        jLabelPinValue.setMinimumSize(null);
-        jLabelPinValue.setPreferredSize(new java.awt.Dimension(50, 20));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.RELATIVE;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
-        jPanelLoginScreen.add(jLabelPinValue, gridBagConstraints);
-
-        jPanel4.add(jPanelLoginScreen);
-
         jPanelWithdrawCash.setPreferredSize(new java.awt.Dimension(200, 174));
         jPanelWithdrawCash.setLayout(new java.awt.GridBagLayout());
 
@@ -694,7 +695,7 @@ public class ATMS extends javax.swing.JFrame {
     // Enum for states of the app
     enum STATE {
         BALANCE, CASH, BALANCE_RECEIPT, CHANGE_PIN, FAST_CASH, MINI_STATEMENT,
-        LOGGED_IN_MAIN_MENU, LOGGED_OUT,CARD_NUMBER;
+        LOGGED_IN_MAIN_MENU, ENTER_PIN,CARD_NUMBER;
     }
 
     // Object of the above enum and is set to logged out when the app starts
@@ -709,11 +710,20 @@ public class ATMS extends javax.swing.JFrame {
     // Default card number
     private int CARDNUMBER = 123456789;
 
+    // Holds all details of the user once logged in
+    private User currentUser;
+
+    // Object of DatabaseOperations class which helps interact with the database
+    private DatabaseOperations databaseOperations;
+
+    // Method that sets the state of the app and calls the setScreen() method which sets the screen according to the
+    // state
     private void setState(STATE state) {
         applicationState = state;
         setScreen();
     }
 
+    // Method to disable all buttons to the left and right side of the main display
     private void disableAllSideButtons() {
         jBtnLeftPanel1.setEnabled(false);
         jBtnLeftPanel2.setEnabled(false);
@@ -723,6 +733,7 @@ public class ATMS extends javax.swing.JFrame {
         jBtnRightPanel2.setEnabled(false);
     }
 
+    // Method to enable all buttons to the left and right side of the main display
     private void enableAllSideButtons() {
         jBtnLeftPanel1.setEnabled(true);
         jBtnLeftPanel2.setEnabled(true);
@@ -731,6 +742,8 @@ public class ATMS extends javax.swing.JFrame {
         jBtnRightPanel3.setEnabled(true);
         jBtnRightPanel2.setEnabled(true);
     }
+
+    //
     private void showLoginCardNumber() {
         jPanelCardNumber.setVisible(true);
         jPanelLoginScreen.setVisible(false);
@@ -819,7 +832,7 @@ public class ATMS extends javax.swing.JFrame {
                  "ATM NO: S1ANBL78\n"+
                 "-----------------------------------------------------\n\n\n" +
                 
-                "Available Balance:\tRs. " + balance + "\n\n\n\n\n\n\n"+
+                "Available Balance:\tRs. " + currentUser.balance + "\n\n\n\n\n\n\n"+
                 "-----------------------------------------------------\n" +
                   "Thank you, Please Visit again.\n"+
                    "Toll Free: 1800 180 2222";
@@ -833,7 +846,7 @@ public class ATMS extends javax.swing.JFrame {
                 showLoginCardNumber();
                 disableAllSideButtons();
                 break;
-            case LOGGED_OUT:
+            case ENTER_PIN:
                 showLoginScreen();
                 disableAllSideButtons();
                 break;
@@ -865,6 +878,10 @@ public class ATMS extends javax.swing.JFrame {
         }
     }
 
+    void updateUserInDatabase() {
+        databaseOperations.update(currentUser.cardNumber, currentUser.pin, currentUser.balance);
+    }
+
     // Function called when 0 is clicked
     private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton0ActionPerformed
         // TODO add your handling code here:
@@ -873,7 +890,7 @@ public class ATMS extends javax.swing.JFrame {
             case CARD_NUMBER:
                 label = jLabelCardNo;
                 break;               
-            case LOGGED_OUT:
+            case ENTER_PIN:
                 label = jLabelPinValue;
                 break;
             case CASH:
@@ -896,7 +913,7 @@ public class ATMS extends javax.swing.JFrame {
             case CARD_NUMBER:
                 label = jLabelCardNo;
                 break;       
-            case LOGGED_OUT:
+            case ENTER_PIN:
                 label = jLabelPinValue;
                 break;
             case CASH:
@@ -920,7 +937,7 @@ public class ATMS extends javax.swing.JFrame {
             case CARD_NUMBER:
                 label = jLabelCardNo;
                 break;              
-            case LOGGED_OUT:
+            case ENTER_PIN:
                 label = jLabelPinValue;
                 break;
             case CASH:
@@ -943,7 +960,7 @@ public class ATMS extends javax.swing.JFrame {
             case CARD_NUMBER:
                 label = jLabelCardNo;
                 break;       
-            case LOGGED_OUT:
+            case ENTER_PIN:
                 label = jLabelPinValue;
                 break;
             case CASH:
@@ -966,7 +983,7 @@ public class ATMS extends javax.swing.JFrame {
             case CARD_NUMBER:
                 label = jLabelCardNo;
                 break;       
-            case LOGGED_OUT:
+            case ENTER_PIN:
                 label = jLabelPinValue;
                 break;
             case CASH:
@@ -989,7 +1006,7 @@ public class ATMS extends javax.swing.JFrame {
             case CARD_NUMBER:
                 label = jLabelCardNo;
                 break;       
-            case LOGGED_OUT:
+            case ENTER_PIN:
                 label = jLabelPinValue;
                 break;
             case CASH:
@@ -1012,7 +1029,7 @@ public class ATMS extends javax.swing.JFrame {
             case CARD_NUMBER:
                 label = jLabelCardNo;
                 break;       
-            case LOGGED_OUT:
+            case ENTER_PIN:
                 label = jLabelPinValue;
                 break;
             case CASH:
@@ -1035,7 +1052,7 @@ public class ATMS extends javax.swing.JFrame {
             case CARD_NUMBER:
                 label = jLabelCardNo;
                 break;       
-            case LOGGED_OUT:
+            case ENTER_PIN:
                 label = jLabelPinValue;
                 break;
             case CASH:
@@ -1058,7 +1075,7 @@ public class ATMS extends javax.swing.JFrame {
             case CARD_NUMBER:
                 label = jLabelCardNo;
                 break;       
-            case LOGGED_OUT:
+            case ENTER_PIN:
                 label = jLabelPinValue;
                 break;
             case CASH:
@@ -1081,7 +1098,7 @@ public class ATMS extends javax.swing.JFrame {
             case CARD_NUMBER:
                 label = jLabelCardNo;
                 break;       
-            case LOGGED_OUT:
+            case ENTER_PIN:
                 label = jLabelPinValue;
                 break;
             case CASH:
@@ -1126,7 +1143,7 @@ public class ATMS extends javax.swing.JFrame {
             case CARD_NUMBER:
                 label = jLabelCardNo;
                 break;       
-            case LOGGED_OUT:
+            case ENTER_PIN:
                 label = jLabelPinValue;
                 break;
             case CASH:
@@ -1149,16 +1166,19 @@ public class ATMS extends javax.swing.JFrame {
     private void jButtonEnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnterActionPerformed
         // If user has not yet logged in
         if (applicationState == STATE.CARD_NUMBER) {
-            if (CARDNUMBER == Integer.parseInt(jLabelCardNo.getText())) {
+            User user = databaseOperations.getUserInfo(Long.parseLong(jLabelCardNo.getText()));
+            if (user != null) {
+                // Setting the current user to the user with this card number
+                currentUser = user;
                 // Changing state to main menu
-                setState(STATE.LOGGED_OUT);
+                setState(STATE.ENTER_PIN);
             } else {
                 // Showing error message instead of "Enter the Card Number" text
                 jLabelCardNumber.setText("Please enter a valid Card Number");
             }
         }
-        else if (applicationState == STATE.LOGGED_OUT) {
-            if (PIN == Integer.parseInt(jLabelPinValue.getText())) {
+        else if (applicationState == STATE.ENTER_PIN) {
+            if (currentUser.pin == Short.parseShort(jLabelPinValue.getText())) {
                 // Changing state to main menu
                 setState(STATE.LOGGED_IN_MAIN_MENU);
             } else {
@@ -1168,10 +1188,10 @@ public class ATMS extends javax.swing.JFrame {
         }
         // If user is withdrawing cash
         else if (applicationState == STATE.CASH) {
-            int withdrawnMoney;
+            long withdrawnMoney;
             try {
                 // Parsing the amount entered as an Integer
-                withdrawnMoney  = Integer.parseInt(jLabelWithdrawCashValue.getText());
+                withdrawnMoney  = Long.parseLong(jLabelWithdrawCashValue.getText());
                 // If money to withdraw is more than balance we show "Invalid" in the TextField where the user has
                 // entered the balance
                 if (withdrawnMoney > balance || withdrawnMoney == 0) {
@@ -1180,7 +1200,8 @@ public class ATMS extends javax.swing.JFrame {
                 }
                 // If money is less than balance then accept the withdrawal and reduce balance
                 else {
-                    balance -= withdrawnMoney;
+                    currentUser.balance -= withdrawnMoney;
+                    updateUserInDatabase();
                     // Going back to the main menu after accepting the withdrawal
                     setState(STATE.LOGGED_IN_MAIN_MENU);
                     jLabelWithdrawCashValue.setText("");
@@ -1193,12 +1214,12 @@ public class ATMS extends javax.swing.JFrame {
         }
         else if (applicationState == STATE.CHANGE_PIN) {
             try {
-                int newPin = Integer.parseInt(jLabelNewPinValue.getText());
+                short newPin = Short.parseShort(jLabelNewPinValue.getText());
                 if (newPin/10000 <= 0 && newPin/1000 > 0 ){
-                    if(newPin == PIN){
+                    if(newPin == currentUser.pin){
                         jLabelNewPin.setText("Invalid pin. Please enter a new pin"); 
                     }else{
-                        PIN = newPin;
+                        currentUser.pin = newPin;
                         setState(STATE.LOGGED_IN_MAIN_MENU);
                         jLabelNewPinValue.setText("");
                         jLabelNewPin.setText("Enter new PIN");
@@ -1224,14 +1245,15 @@ public class ATMS extends javax.swing.JFrame {
         // String balance = 10000;
         if (applicationState == STATE.LOGGED_IN_MAIN_MENU) {
             setState(STATE.BALANCE);
-            jLabelShowBalanceValue.setText(String.valueOf(balance));
+            jLabelShowBalanceValue.setText(String.valueOf(currentUser.balance));
         }  else if (applicationState == STATE.FAST_CASH) {
             try {
-                int withdrawnMoney = Integer.parseInt(jLabelRs100.getText());
-                if (withdrawnMoney > balance) {
+                long withdrawnMoney = Long.parseLong(jLabelRs100.getText());
+                if (withdrawnMoney > currentUser.balance) {
                     jLabelWarningFastCash.setText("Amount greater than balance");
                 } else {
-                    balance -= withdrawnMoney;
+                    currentUser.balance -= withdrawnMoney;
+                    updateUserInDatabase();
                     setState(STATE.LOGGED_IN_MAIN_MENU);
                 }
             } catch (Exception e) {
@@ -1247,12 +1269,13 @@ public class ATMS extends javax.swing.JFrame {
             setState(STATE.CASH);
         } else if (applicationState == STATE.FAST_CASH) {
             try {
-                int withdrawnMoney = Integer.parseInt(jLabelRs500.getText());
+                long withdrawnMoney = Long.parseLong(jLabelRs500.getText());
           
                 if (withdrawnMoney > balance) {
                     jLabelWarningFastCash.setText("Amount greater than balance");
                 }else {
-                    balance -= withdrawnMoney;
+                    currentUser.balance -= withdrawnMoney;
+                    updateUserInDatabase();
                     setState(STATE.LOGGED_IN_MAIN_MENU);
                 }
             } catch (Exception e) {
@@ -1268,11 +1291,12 @@ public class ATMS extends javax.swing.JFrame {
             setState(STATE.BALANCE_RECEIPT);
         } else if (applicationState == STATE.FAST_CASH) {
             try {
-                int withdrawnMoney = Integer.parseInt(jLabelRs1000.getText());
+                long withdrawnMoney = Long.parseLong(jLabelRs1000.getText());
                 if (withdrawnMoney > balance) {
                     jLabelWarningFastCash.setText("Amount greater than balance");
                 } else {
-                    balance -= withdrawnMoney;
+                    currentUser.balance -= withdrawnMoney;
+                    updateUserInDatabase();
                     setState(STATE.LOGGED_IN_MAIN_MENU);
                 }
             } catch (Exception e) {
@@ -1288,11 +1312,12 @@ public class ATMS extends javax.swing.JFrame {
             setState(STATE.CHANGE_PIN);
         } else if (applicationState == STATE.FAST_CASH) {
             try {
-                int withdrawnMoney = Integer.parseInt(jLabelRs2000.getText());
+                long withdrawnMoney = Long.parseLong(jLabelRs2000.getText());
                 if (withdrawnMoney > balance) {
                     jLabelWarningFastCash.setText("Amount greater than balance");
                 } else {
-                    balance -= withdrawnMoney;
+                    currentUser.balance -= withdrawnMoney;
+                    updateUserInDatabase();
                     setState(STATE.LOGGED_IN_MAIN_MENU);
                 }
             } catch (Exception e) {
@@ -1308,11 +1333,12 @@ public class ATMS extends javax.swing.JFrame {
             setState(STATE.FAST_CASH);
         } else if (applicationState == STATE.FAST_CASH) {
             try {
-                int withdrawnMoney = Integer.parseInt(jLabelRs5000.getText());
+                long withdrawnMoney = Long.parseLong(jLabelRs5000.getText());
                 if (withdrawnMoney > balance) {
                     jLabelWarningFastCash.setText("Amount greater than balance");
                 } else {
-                    balance -= withdrawnMoney;
+                    currentUser.balance -= withdrawnMoney;
+                    updateUserInDatabase();
                     setState(STATE.LOGGED_IN_MAIN_MENU);
                 }
             } catch (Exception e) {
@@ -1326,11 +1352,12 @@ public class ATMS extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (applicationState == STATE.FAST_CASH) {
             try {
-                int withdrawnMoney = Integer.parseInt(jLabelRs10000.getText());
+                long withdrawnMoney = Long.parseLong(jLabelRs10000.getText());
                 if (withdrawnMoney > balance) {
                     jLabelWarningFastCash.setText("Amount greater than balance");
                 } else {
-                    balance -= withdrawnMoney;
+                    currentUser.balance -= withdrawnMoney;
+                    updateUserInDatabase();
                     setState(STATE.LOGGED_IN_MAIN_MENU);
                 }
             } catch (Exception e) {
