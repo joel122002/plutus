@@ -58,47 +58,55 @@ The last thing we need to set up is pom.xml . Simply copy paste the below code i
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-   <modelVersion>4.0.0</modelVersion>
-   <groupId>ATM_system</groupId>
-   <artifactId>ATM_system</artifactId>
-   <version>1.0-SNAPSHOT</version>
-   <packaging>jar</packaging>
-   <dependencies>
-      <dependency>
-         <groupId>org.netbeans.external</groupId>
-         <artifactId>AbsoluteLayout</artifactId>
-         <version>RELEASE120</version>
-      </dependency>
-      <dependency>
-         <groupId>mysql</groupId>
-         <artifactId>mysql-connector-java</artifactId>
-         <version>8.0.27</version>
-      </dependency>
-   </dependencies>
-   <properties>
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-      <maven.compiler.source>11</maven.compiler.source>
-      <maven.compiler.target>11</maven.compiler.target>
-   </properties>
-   <build>
-      <plugins>
-         <plugin>
-            <!-- Build an executable JAR -->
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>3.1.0</version>
-            <configuration>
-               <archive>
-                  <manifest>
-                     <addClasspath>true</addClasspath>
-                     <classpathPrefix>lib/</classpathPrefix>
-                     <mainClass>ATM_system.ATMS</mainClass>
-                  </manifest>
-               </archive>
-            </configuration>
-         </plugin>
-      </plugins>
-   </build>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ATM_system</groupId>
+    <artifactId>ATM_system</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.netbeans.external</groupId>
+            <artifactId>AbsoluteLayout</artifactId>
+            <version>RELEASE120</version>
+        </dependency>
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>3.34.0</version>
+        </dependency>
+
+    </dependencies>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>ATM_system.ATMS</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase> <!-- packaging phase -->
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
 ```
 Now we're ready to go
@@ -111,4 +119,28 @@ mvn exec:java -Dexec.mainClass=ATM_system.ATMS
 To add a user/card number
 ```bash
 mvn exec:java -D"exec.mainClass"="ATM_system.DatabaseOperations" -D"exec.args"="CARD_NUMBER PIN BALANCE"
+```
+
+## Creating a jar
+To create a jar of Add User simply replace
+```xml
+<manifest>
+    <mainClass>ATM_system.ATMS</mainClass>
+</manifest>
+```
+with
+```xml
+<manifest>
+    <mainClass>ATM_system.DatabaseOperations</mainClass>
+</manifest>
+```
+To create the jar simply write
+```bash
+mvn clean install
+```
+
+To create the jar for the GUI you can use the same pom.xml for in [Installation](#Installation).
+Again to create the jar simply write
+```bash
+mvn clean install
 ```
