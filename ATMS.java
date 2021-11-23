@@ -4,10 +4,8 @@
  */
 package ATM_system;
 
-import javax.swing.JOptionPane;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.*;
 
 /**
  *
@@ -675,7 +673,7 @@ public class ATMS extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(154, 154, 154)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 373, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
@@ -685,7 +683,7 @@ public class ATMS extends javax.swing.JFrame {
                             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -1180,6 +1178,7 @@ public class ATMS extends javax.swing.JFrame {
         else if (applicationState == STATE.ENTER_PIN) {
             if (currentUser.pin == Short.parseShort(jLabelPinValue.getText())) {
                 // Changing state to main menu
+                System.out.println(currentUser.pin);
                 setState(STATE.LOGGED_IN_MAIN_MENU);
             } else {
                 // Showing error message instead of "Enter the PIN" text
@@ -1191,10 +1190,12 @@ public class ATMS extends javax.swing.JFrame {
             long withdrawnMoney;
             try {
                 // Parsing the amount entered as an Integer
-                withdrawnMoney  = Long.parseLong(jLabelWithdrawCashValue.getText());
+                withdrawnMoney = Long.parseLong(jLabelWithdrawCashValue.getText());
+                System.out.println(withdrawnMoney);
+                System.out.println(currentUser.balance);
                 // If money to withdraw is more than balance we show "Invalid" in the TextField where the user has
                 // entered the balance
-                if (withdrawnMoney > balance || withdrawnMoney == 0) {
+                if (withdrawnMoney > currentUser.balance || withdrawnMoney == 0) {
                     jLabelWithdrawCashValue.setText("Invalid");
                     return;
                 }
@@ -1220,6 +1221,7 @@ public class ATMS extends javax.swing.JFrame {
                         jLabelNewPin.setText("Invalid pin. Please enter a new pin"); 
                     }else{
                         currentUser.pin = newPin;
+                        updateUserInDatabase();
                         setState(STATE.LOGGED_IN_MAIN_MENU);
                         jLabelNewPinValue.setText("");
                         jLabelNewPin.setText("Enter new PIN");
@@ -1271,7 +1273,7 @@ public class ATMS extends javax.swing.JFrame {
             try {
                 long withdrawnMoney = Long.parseLong(jLabelRs500.getText());
           
-                if (withdrawnMoney > balance) {
+                if (withdrawnMoney > currentUser.balance) {
                     jLabelWarningFastCash.setText("Amount greater than balance");
                 }else {
                     currentUser.balance -= withdrawnMoney;
@@ -1292,7 +1294,7 @@ public class ATMS extends javax.swing.JFrame {
         } else if (applicationState == STATE.FAST_CASH) {
             try {
                 long withdrawnMoney = Long.parseLong(jLabelRs1000.getText());
-                if (withdrawnMoney > balance) {
+                if (withdrawnMoney > currentUser.balance) {
                     jLabelWarningFastCash.setText("Amount greater than balance");
                 } else {
                     currentUser.balance -= withdrawnMoney;
@@ -1313,7 +1315,7 @@ public class ATMS extends javax.swing.JFrame {
         } else if (applicationState == STATE.FAST_CASH) {
             try {
                 long withdrawnMoney = Long.parseLong(jLabelRs2000.getText());
-                if (withdrawnMoney > balance) {
+                if (withdrawnMoney > currentUser.balance) {
                     jLabelWarningFastCash.setText("Amount greater than balance");
                 } else {
                     currentUser.balance -= withdrawnMoney;
@@ -1334,7 +1336,7 @@ public class ATMS extends javax.swing.JFrame {
         } else if (applicationState == STATE.FAST_CASH) {
             try {
                 long withdrawnMoney = Long.parseLong(jLabelRs5000.getText());
-                if (withdrawnMoney > balance) {
+                if (withdrawnMoney > currentUser.balance) {
                     jLabelWarningFastCash.setText("Amount greater than balance");
                 } else {
                     currentUser.balance -= withdrawnMoney;
@@ -1353,7 +1355,7 @@ public class ATMS extends javax.swing.JFrame {
         if (applicationState == STATE.FAST_CASH) {
             try {
                 long withdrawnMoney = Long.parseLong(jLabelRs10000.getText());
-                if (withdrawnMoney > balance) {
+                if (withdrawnMoney > currentUser.balance) {
                     jLabelWarningFastCash.setText("Amount greater than balance");
                 } else {
                     currentUser.balance -= withdrawnMoney;

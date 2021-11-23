@@ -13,15 +13,20 @@ public class DatabaseOperations {
         try {
             // Getting an instance the driver
             try {
-                Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
-            } catch (Exception e) {
-                System.out.println(e);
+                Class.forName("org.sqlite.JDBC");
+            } catch ( Exception e ) {
+                System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+                System.exit(0);
             }
-            // Connecting to the database with the Credentials provided in Credentials.java
-            conn = (Connection) DriverManager.getConnection(Credentials.SQL_URL + "?" +
-                    "user=" + Credentials.SQL_USERNAME + "&password=" + Credentials.SQL_PASSWORD);
+            conn = DriverManager.getConnection("jdbc:sqlite:test.db");
             // The object used for executing a static SQL statement and returning the results it produces.
             stmt = (Statement) conn.createStatement();
+            String sql = "CREATE TABLE IF NOT EXISTS accounts (\n" +
+                    "    CARD_NUMBER INTEGER ,\n" +
+                    "    PIN INTEGER ,\n" +
+                    "    BALANCE INTEGER \n" +
+                    ");";
+            stmt.execute(sql);
             System.out.println("Connection is created successfully:");
 
         } catch (SQLException excep) {
