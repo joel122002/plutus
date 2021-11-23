@@ -26,7 +26,7 @@ Clone this repo into a folder with the following directory structure
 │   │               README.md
 │   │               User.java
 ```
-You can download the mysql-connector from [Maven Repository](https://mvnrepository.com/artifact/mysql/mysql-connector-java/)
+You can download sqlite-jdbc from [Maven Repository](https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc/)
 
 The Credentials.java file contains all the credentials to connect to MySQL. Here is a demo
 
